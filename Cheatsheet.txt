@@ -20,3 +20,10 @@ For example,
 git add . is read as git | add | ., where the period represents everything in the current directory;
 git commit -m "message" is read as git | commit -m | "message"; and
 git status is read as git | status | (no destination).
+
+
+HTML
+What if we want to use the image in the other page? 
+We would first have to go up one level out of the pages directory into its parent directory so we could then access the images directory.
+
+To go to the parent directory we need to use two dots in the relative filepath like this: ../
