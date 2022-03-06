@@ -40,3 +40,8 @@ This level also includes attribute selectors that target HTML attributes, like [
 This level also includes pseudo-selectors, like :hover and :first-of-type
 
 The universal selector (*) and combinators (+, >, ~, _, ||) have no effect on specificity
+
+A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc) that matches the previous selector.
+
+So something like .ancestor .child would select an element with the class child if it has an ancestor with the class ancestor. Another way to think of it is child will only be selected if it is nested inside of ancestor.
+give Space when you are using this.
