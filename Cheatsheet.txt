@@ -45,3 +45,49 @@ A descendant combinator will only cause elements that match the last selector to
 
 So something like .ancestor .child would select an element with the class child if it has an ancestor with the class ancestor. Another way to think of it is child will only be selected if it is nested inside of ancestor.
 give Space when you are using this.
+
+Everything in CSS has a box around it, and understanding these boxes is key to being able to create layouts with CSS, or to align items with other items.
+here are multiple ways to manipulate the size of these boxes, and the space between them, using margin, padding, and border.
+
+padding increases the space between the edge of a box and the content inside of it; 
+
+margin increases the space between a box and any others that sit next to it; 
+
+and border adds space (even if it’s only a pixel or two) between the margin and the padding. Be sure to study the diagrams carefully.
+
+In Box model the total height = padding(top + bottom) + defined height; similarly for total width= border(top + bottom) + defined width.
+If you don't want your padding and border adding up your total, use box-sizing:border-box which makes it to only consider the defined height and width.
+
+To inspect the box model, Use Chrome Dev Tools.
+
+Most of the elements that you have learned about so far are block elements. In other words, their default style is display: block. By default, block elements will appear on the page stacked atop each other, each new element starting on a new line.
+Inline elements, however, do not start on a new line. They appear in line with whatever elements they are placed beside. A clear example of an inline element is a link, or <a> tag. If you stick one of these in the middle of a paragraph of text, it will behave like a part of the paragraph. 
+
+Div is a block-level element by default. It is commonly used as a container element to group other elements. Divs allows us to divide the page into different blocks and apply styling to those blocks.
+Two commonly used block elements are: <p> and <div>.
+The <p> element defines a paragraph in an HTML document.
+The <div> element defines a division or a section in an HTML document.
+
+An inline element does not start on a new line.
+An inline element only takes up as much width as necessary.
+Span is an inline-level element by default. It is commonly used to group text content and inline HTML elements so we can apply styling to them.
+An inline element cannot contain a block-level element!
+
+display: inline-block brought a new way to create side by side boxes that collapse and wrap properly depending on the available space in the containing element. It makes layouts that were previously accomplished with floats easier to create. No need to clear floats anymore.
+Compared to display: inline, the major difference is that inline-block allows to set a width and height on the element. Also, with display: inline, top and bottom margins & paddings are not respected, and with display: inline-block they are.
+Now, the difference between display: inline-block and display: block is that, with display: block, a line break happens after the element, so a block element doesn’t sit next to other elements.
+
+Flexbox is a way to arrange items into rows or columns, where those items will flex (i.e. grow or shrink) based on some simple rules that you can define.
+A flex container is any element that has display: flex on it. A flex item is any element that lives directly inside of a flex container.
+This method of creating and nesting multiple flex containers and items is the primary way we will be building up complex layouts. The next image was achieved using only flexbox to arrange, size, and place the various elements. Flexbox is a very powerful tool.
+
+Shorthand properties are CSS properties that let you set the values of multiple other CSS properties simultaneously. Using a shorthand property, you can write more concise (and often more readable) stylesheets, saving time and energy.
+
+when we changed the flex-direction to column, flex-basis refers to height instead of width.
+
+Adding flex: 1 to .item makes each of the items grow to fill the available space, but what if we wanted them to stay the same width, but distribute themselves differently inside the container? We can do this by
+Remove flex: 1 from .item and add justify-content: space-between in parent flex container.
+
+justify-content aligns vertically and align-items aligns horizontally. The most common behavior, however, is the default, i.e. justify-content aligns items horizontally (because the main axis defaults to horizontal), and align-items aligns them vertically.
+
+One more very useful feature of flex is the gap property. Setting gap on a flex container simply adds a specified space between flex items, very similar to adding a margin to the items themselves. gap is a very new property so it doesn’t show up in very many resources yet, but it works reliably in all modern browsers, so it is safe to use and is very handy!
