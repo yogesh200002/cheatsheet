@@ -1,0 +1,15 @@
+JavaScript files have the extension .js similar to .css for stylesheets. External JavaScript files are used for more complex scripts.
+
+console.log() is the command to print something to the developer console in your browser. 
+You can use this to print the results from any of the following articles and exercises to the console.
+
+Variables are simply “storage containers” for data in your code. Until recently there was only one way 
+to create a variable in JavaScript — the var statement. But in the newest JavaScript versions we have two more ways — let and const.
+we can combine the variable declaration and assignment into a single line
+We can also declare multiple variables in one line
+The var keyword is almost the same as let. It also declares a variable, but in a slightly different, “old-school” way.
+
+There are two limitations on variable names in JavaScript:
+
+The name must contain only letters, digits, or the symbols $ and _.
+The first character must not be a digit.
