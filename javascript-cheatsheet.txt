@@ -13,3 +13,47 @@ There are two limitations on variable names in JavaScript:
 
 The name must contain only letters, digits, or the symbols $ and _.
 The first character must not be a digit.
+
+Unlike many other programming languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.
+JavaScript numbers are always stored as double precision floating point numbers,This format stores numbers in 64 bits.
+Floating point arithmetic is not always 100% accurate: for example by adding 0.2 + 0.1 it gives 0.30000000000000004, 
+so to prevent this we can add by (0.2 * 10 + 0.1 * 10) / 10 so it gives 0.3 as answer.
+If you add two strings, the result will be a string concatenation.
+JavaScript will try to convert strings to numbers in all numeric operations, but + is an exception since it is used for concatenation.
+
+NaN is a JavaScript reserved word indicating that a number is not a legal number.
+Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number).
+You can use the global JavaScript function isNaN() to find out if a value is a not a number.
+If you use NaN in a mathematical operation, the result will also be NaN Or the result might be a concatenation.
+NaN is a number: typeof NaN returns number
+
+Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.
+Division by 0 (zero) also generates Infinity, Infinity is a number: typeof Infinity returns number.
+
+Never write a number with a leading zero (like 07).
+Some JavaScript versions interpret numbers as octal if they are written with a leading zero.
+
+JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.
+
+By default, JavaScript displays numbers as base 10 decimals.
+But you can use the toString() method to output numbers from base 2 to base 36.
+Hexadecimal is base 16. Decimal is base 10. Octal is base 8. Binary is base 2.
+
+Normally JavaScript numbers are primitive values created from literals,
+But numbers can also be defined as objects with the keyword new. example: let y = new Number(123);
+Comparing two JavaScript objects always returns false.
+
+Difference between == and ===
+0==false // true, because false is equivalent of 0 
+0===false // false, because both operands are of different type 
+2=="2" // true, auto type coercion, string converted into number 
+2==="2" // false, since both operands are not of same type
+=== is known as strictly equality operator.
+
+You may see some people using == and != in their tests for equality and non-equality. These are valid operators in JavaScript, but they differ from ===/!==. The former versions test whether the values are the same but not whether the values' datatypes are the same. The latter, strict versions test the equality of both the values and their datatypes. The strict versions tend to result in fewer errors, so we recommend you use them.
+
+An operator is unary if it has a single operand. For example, the unary negation - reverses the sign of a number
+The unary plus or, in other words, the plus operator + applied to a single value, doesn’t do anything to numbers. But if the operand is not a number, the unary plus converts it into a number. unary pluses are applied first, they convert strings to numbers, and then the binary plus sums them up.
+
+Chained assignments evaluate from right to left.
+example: a = b = c = 2 + 2;
