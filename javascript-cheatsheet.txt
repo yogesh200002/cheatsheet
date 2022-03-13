@@ -57,3 +57,64 @@ The unary plus or, in other words, the plus operator + applied to a single value
 
 Chained assignments evaluate from right to left.
 example: a = b = c = 2 + 2;
+
+Concatenate just means "join together". To join together strings in JavaScript you can use a different type of string, called a template literal.
+A template literal looks just like a normal string, but instead of using single or double quote marks (' or "), you use backtick characters (`)
+Example:
+const name = 'Chris';
+const greeting = `Hello, ${name}`;
+console.log(greeting); // "Hello, Chris"
+
+You can use the same technique to join together two variables:
+const one = 'Hello, ';
+const two = 'how are you?';
+const joined = `${one}${two}`;
+console.log(joined); // "Hello, how are you?"
+
+You can also concatenate strings using the + operator
+
+The Number object converts anything passed to it into a number, if it can. 
+every number has a method called toString() that converts it to the equivalent string.
+
+Template literals respect the line breaks in the source code, so you can write strings that span multiple lines like this:
+const output = `I like the song.
+I gave it a score of 90%.`;
+console.log(output);  // I like the song.
+                      // I gave it a score of 90%.
+We can also use \n to break the line.
+
+By default, the replace() method replaces only the first match
+
+All string methods return a new string. They don't modify the original string.
+Formally said:
+Strings are immutable: Strings cannot be changed, only replaced.
+
+text.split(",")    // Split on commas
+text.split(" ")    // Split on spaces
+text.split("|")    // Split on pipe
+
+To see whether a string is greater than another, JavaScript uses the so-called “dictionary” or “lexicographical” order.
+In other words, strings are compared letter-by-letter.
+When comparing values of different types, JavaScript converts the values to numbers.
+
+In JavaScript we have the following conditional statements:
+
+Use if to specify a block of code to be executed, if a specified condition is true
+Use else to specify a block of code to be executed, if the same condition is false
+Use else if to specify a new condition to test, if the first condition is false
+Use switch to specify many alternative blocks of code to be executed
+
+Any value that is not false, undefined, null, 0, NaN, or an empty string ('') actually returns true when tested as a conditional statement, therefore you can use a variable name on its own to test whether it is true, or even that it exists (that is, it is not undefined.)
+
+Ternary Operator
+The ternary or conditional operator is a small bit of syntax that tests a condition and returns one value/expression if it is true, and another if it is false — this can be useful in some situations, and can take up a lot less code than an if...else block if you have two choices that are chosen between via a true/false condition.
+The pseudocode looks like this:
+
+( condition ) ? run this code : run this code instead
+The ternary operator is not just for setting variable values; you can also run functions, or lines of code — anything you like.
+A sequence of question mark operators ? can return a value that depends on more than one condition.
+
+Slicing
+The slice() method extracts parts of a string and returns the extracted parts in a new string.
+The substr() method extracts parts of a string, beginning at the character at the specified position, and returns the specified number of characters.
+The substring() method extracts parts of a string and returns the extracted parts in a new string.
