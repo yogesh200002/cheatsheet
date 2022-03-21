@@ -211,3 +211,7 @@ do {
 } while (condition)
 
 The main difference between a do...while loop and a while loop is that the code inside a do...while loop is always executed at least once. That's because the condition comes after the code inside the loop. So we always run that code, then check to see if we need to run it again. In while and for loops, the check comes first, so the code might never be executed.
+
+we can get a nodelist of all of the items matching a specific selector with querySelectorAll('selector').
+for single selector we can use querySelector('selector')
+While using selector use quotes and identify class or id or tag like you select in CSS.
