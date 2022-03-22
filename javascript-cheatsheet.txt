@@ -215,3 +215,16 @@ The main difference between a do...while loop and a while loop is that the code 
 we can get a nodelist of all of the items matching a specific selector with querySelectorAll('selector').
 for single selector we can use querySelector('selector')
 While using selector use quotes and identify class or id or tag like you select in CSS.
+
+For using querySelector on a tag which has attribute; example: <audio data-key="65">
+we can select like this querySelector("audio[data-key]")
+
+If you want to use a function value which is in with attribute value example <audio data-key="65"> in which the value 65 is returned from an function
+we can use querySelector(`audio[data-key]="${e.keyCode}"`) in this backtick and ${} is used to differentiate the return value and a selector.
+Because single and double quotes only contains normal strings and we can't include a expression within it.
+Backticks represent template literals, which also contain other parts called placeholders, which are embedded expressions delimited by a dollar sign and curly braces: ${expression}.
+
+When we use querySelectorAll, it returns a nodelist not an array so we can't traverse through it by slicing. 
+We can traverse through it by using forEach function.
+
+When a function is used as an event handler, its this is set to the element on which the listener is placed (some browsers do not follow this convention for listeners added dynamically with methods other than addEventListener()).
