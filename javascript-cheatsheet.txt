@@ -228,3 +228,10 @@ When we use querySelectorAll, it returns a nodelist not an array so we can't tra
 We can traverse through it by using forEach function.
 
 When a function is used as an event handler, its this is set to the element on which the listener is placed (some browsers do not follow this convention for listeners added dynamically with methods other than addEventListener()).
+
+Bubbling
+Event bubbling is a method of event propagation in the HTML DOM API when an event is in an element inside another element, and both elements have registered a handle to that event. It is a process that starts with the element that triggered the event and then bubbles up to the containing elements in the hierarchy. In event bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+To Stop Bubbling we can use <event>.stopPropagation();
+
+To make the eventlistener listen only once, we can use addEventListener('event','function or anything',{once:true})
+the once parameter makes sure that it only done once.
