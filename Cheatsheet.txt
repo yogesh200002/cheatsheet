@@ -26,9 +26,14 @@ You can make new branches by using the command git branch <branch_name>. You can
 You can also create a new branch and change to it in a single command by using the -b flag with checkout, in the form git checkout -b <branch_name>.
 You can see all of your current branches using git branch with no other arguments.
 
-Merges are done by using the command git merge <branch_name> which will take the changes you’ve committed in branch_name and add them to the branch that you’re currently on.
+Merges are done by using the command git merge <branch_name> which will take the changes you’ve committed in branch_name 
+and add them to the branch that you’re currently on.
 
-When you don’t need a branch anymore it can be deleted using git branch -d <branch_name> if the branch has already been merged into main or with git branch -D <branch_name> if it hasn’t. You will usually want to delete branches when you’re done with them, otherwise they can pile up and make it more difficult to find the branch you’re looking for when you need it.
+When you don’t need a branch anymore it can be deleted using git branch -d <branch_name> if the branch has already been merged 
+into main or with git branch -D <branch_name> if it hasn’t. You will usually want to delete branches when you’re done with them, 
+otherwise they can pile up and make it more difficult to find the branch you’re looking for when you need it.
+
+To make the branch accessible in remote GitHub to share the branch or any other thing, use git push origin <branch name>
 
 HTML
 What if we want to use the image in the other page? 
