@@ -235,3 +235,136 @@ To Stop Bubbling we can use <event>.stopPropagation();
 
 To make the eventlistener listen only once, we can use addEventListener('event','function or anything',{once:true})
 the once parameter makes sure that it only done once.
+
+Objects
+An object can be created with figure brackets {…} with an optional list of properties. A property is a “key: value” pair, where key is a string (also called a “property name”), and value can be anything.
+We can imagine an object as a cabinet with signed files. Every piece of data is stored in its file by the key. It’s easy to find a file by its name or add/remove a file.
+It is like Dictionary in Python.
+The syntax always follows this pattern:
+
+const objectName = {
+  member1Name: member1Value,
+  member2Name: member2Value,
+  member3Name: member3Value
+};
+
+To walk over all keys of an object, there exists a special form of the loop: for..in. This is a completely different thing from the for(;;) construct that we studied before.
+The syntax:
+for (key in object) {
+  // executes the body for each key among object properties
+}
+
+In objects, the integers are default sorted in ascending order even when we are creating it in a unordered manner.
+As an example, let’s consider an object with the phone codes:
+
+let codes = {
+  "49": "Germany",
+  "41": "Switzerland",
+  "44": "Great Britain",
+  // ..,
+  "1": "USA"
+};
+
+for (let code in codes) {
+  alert(code); // 1, 41, 44, 49
+}
+The phone codes go in the ascending sorted order, because they are integers. So we see 1, 41, 44, 49.
+
+On the other hand, if the keys are non-integer, then they are listed in the creation order
+
+Constructor
+A constructor is just a function called using the new keyword. When you call a constructor, it will:
+
+i)create a new object
+ii)bind this to the new object, so you can refer to this in your constructor code
+iii)run the code in the constructor
+iv)return the new object.
+
+Constructors, by convention, start with a capital letter and are named for the type of object they create. 
+Example:
+function Person(name) {
+  this.name = name;
+  this.introduceSelf = function() {
+    console.log(`Hi! I'm ${this.name}.`);
+  }
+}
+Copy to Clipboard
+To call Person() as a constructor, we use new:
+
+const salva = new Person('Salva');
+salva.name;
+salva.introduceSelf();
+
+const frankie = new Person('Frankie');
+frankie.name;
+frankie.introduceSelf();
+Copy to Clipboard
+
+Object Methods
+1. obj.sort()
+syntax obj.sort(function () {
+  conditon{
+    statement
+    return 1 -1 or 0}
+})
+
+The sort method takes an optional comparison function that determines the resulting sort order based on the following:
+if its return value is less than zero, then sort value1 to a lower index than value2
+if its return value is zero, then leave the indices of value1 and value2 unchanged with respect to each other
+if its return value is greater than zero, then sort value1 to a higher index than value2
+
+2. Obj.map()
+The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+Syntax:
+map(function(element) { /* ... */ })
+
+Since map builds a new array, using it when you aren't using the returned array is an anti-pattern; use forEach or for...of instead.
+You shouldn't be using map if:
+you're not using the array it returns; and/or
+you're not returning a value from the callback.
+
+3. obj.filter()
+The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+Syntax:
+filter((element) => { /* ... */ } )
+
+4. obj.reduce()
+The reduce() method executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
+Syntax:
+reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ }, initialValue)
+initialValue is used when it is not initialised, or the value can be given directly while using function. It is also optional.
+CurrentIndex and array are optional.
+
+Example:
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+console.log(sumWithInitial);
+// expected output: 10
+
+5. obj.some()
+The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+Syntax
+some((element) => { /* ... */ } )
+
+6. obj.every()
+The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+Syntax
+every((element) => { /* ... */ } )
+
+7. obj.find()
+The find() method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+If you need the index of the found element in the array, use findIndex().
+If you need to find the index of a value, use Array.prototype.indexOf(). (It's similar to findIndex(), but checks each element for equality with the value instead of using a testing function.)
+If you need to find if a value exists in an array, use Array.prototype.includes(). Again, it checks each element for equality with the value instead of using a testing function.
+If you need to find if any element satisfies the provided testing function, use Array.prototype.some().
+
+Syntax
+find((element) => { /* ... */ } )
