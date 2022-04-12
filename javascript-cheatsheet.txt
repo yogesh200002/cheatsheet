@@ -5,14 +5,14 @@ You can use this to print the results from any of the following articles and exe
 
 Variables are simply “storage containers” for data in your code. Until recently there was only one way 
 to create a variable in JavaScript — the var statement. But in the newest JavaScript versions we have two more ways — let and const.
-we can combine the variable declaration and assignment into a single line
-We can also declare multiple variables in one line
-The var keyword is almost the same as let. It also declares a variable, but in a slightly different, “old-school” way.
+-we can combine the variable declaration and assignment into a single line
+-We can also declare multiple variables in one line
+-The var keyword is almost the same as let. It also declares a variable, but in a slightly different, “old-school” way.
 
 There are two limitations on variable names in JavaScript:
 
-The name must contain only letters, digits, or the symbols $ and _.
-The first character must not be a digit.
+-The name must contain only letters, digits, or the symbols $ and _.
+-The first character must not be a digit.
 
 Unlike many other programming languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.
 JavaScript numbers are always stored as double precision floating point numbers,This format stores numbers in 64 bits.
@@ -44,21 +44,21 @@ But numbers can also be defined as objects with the keyword new. example: let y 
 Comparing two JavaScript objects always returns false.
 
 Difference between == and ===
-0==false // true, because false is equivalent of 0 
-0===false // false, because both operands are of different type 
-2=="2" // true, auto type coercion, string converted into number 
-2==="2" // false, since both operands are not of same type
-=== is known as strictly equality operator.
+-0==false // true, because false is equivalent of 0 
+-0===false // false, because both operands are of different type 
+-2=="2" // true, auto type coercion, string converted into number 
+-2==="2" // false, since both operands are not of same type
+-=== is known as strictly equality operator.
 
 You may see some people using == and != in their tests for equality and non-equality. These are valid operators in JavaScript, but they differ from ===/!==. The former versions test whether the values are the same but not whether the values' datatypes are the same. The latter, strict versions test the equality of both the values and their datatypes. The strict versions tend to result in fewer errors, so we recommend you use them.
 
-An operator is unary if it has a single operand. For example, the unary negation - reverses the sign of a number
+An *operator* is unary if it has a single operand. For example, the unary negation - reverses the sign of a number
 The unary plus or, in other words, the plus operator + applied to a single value, doesn’t do anything to numbers. But if the operand is not a number, the unary plus converts it into a number. unary pluses are applied first, they convert strings to numbers, and then the binary plus sums them up.
 
 Chained assignments evaluate from right to left.
 example: a = b = c = 2 + 2;
 
-Concatenate just means "join together". To join together strings in JavaScript you can use a different type of string, called a template literal.
+*Concatenate* just means "join together". To join together strings in JavaScript you can use a different type of string, called a template literal.
 A template literal looks just like a normal string, but instead of using single or double quote marks (' or "), you use backtick characters (`)
 Example:
 const name = 'Chris';
@@ -99,14 +99,14 @@ When comparing values of different types, JavaScript converts the values to numb
 
 In JavaScript we have the following conditional statements:
 
-Use if to specify a block of code to be executed, if a specified condition is true
-Use else to specify a block of code to be executed, if the same condition is false
-Use else if to specify a new condition to test, if the first condition is false
-Use switch to specify many alternative blocks of code to be executed
+-Use if to specify a block of code to be executed, if a specified condition is true
+-Use else to specify a block of code to be executed, if the same condition is false
+-Use else if to specify a new condition to test, if the first condition is false
+-Use switch to specify many alternative blocks of code to be executed
 
 Any value that is not false, undefined, null, 0, NaN, or an empty string ('') actually returns true when tested as a conditional statement, therefore you can use a variable name on its own to test whether it is true, or even that it exists (that is, it is not undefined.)
 
-Ternary Operator
+##Ternary Operator
 The ternary or conditional operator is a small bit of syntax that tests a condition and returns one value/expression if it is true, and another if it is false — this can be useful in some situations, and can take up a lot less code than an if...else block if you have two choices that are chosen between via a true/false condition.
 The pseudocode looks like this:
 
@@ -114,12 +114,12 @@ The pseudocode looks like this:
 The ternary operator is not just for setting variable values; you can also run functions, or lines of code — anything you like.
 A sequence of question mark operators ? can return a value that depends on more than one condition.
 
-Slicing
+##Slicing
 The slice() method extracts parts of a string and returns the extracted parts in a new string.
 The substr() method extracts parts of a string, beginning at the character at the specified position, and returns the specified number of characters.
 The substring() method extracts parts of a string and returns the extracted parts in a new string.
 
-Functions
+##Functions
 Functions are values. They can be assigned, copied or declared in any place of the code.
 If the function is declared as a separate statement in the main code flow, that’s called a “Function Declaration”.
 If the function is created as a part of an expression, it’s called a “Function Expression”.
@@ -139,7 +139,7 @@ let sayHi = function() {
   alert( "Hello" );
 };
 
-Arrow Functions
+##Arrow Functions
 It’s called “arrow functions”, because it looks like this:
 let func = (arg1, arg2, ..., argN) => expression;
 
@@ -157,7 +157,7 @@ let sum = (a, b) => {  // the curly brace opens a multiline function
 
 alert( sum(1, 2) ); // 3
 
-Default Parameters
+##Default Parameters
 If you're writing a function and want to support optional parameters, you can specify default values by adding = after the name of the parameter, followed by the default value:
 function hello(name='Chris') {
   console.log(`Hello ${name}!`);
@@ -165,13 +165,13 @@ function hello(name='Chris') {
 hello('Ari'); // Hello Ari!
 hello();      // Hello Chris!
 
-anonymous function
+##Anonymous function
 function() {
   alert('hello');
 }
 This is called an anonymous function, because it has no name. You'll often see anonymous functions when a function expects to receive another function as a parameter. In this case the function parameter is often passed as an anonymous function.
 
-For Loop
+##For Loop
 
 For loop is syntax is:
 for(initialisation;test condition;increment or decrement){ }
@@ -188,7 +188,7 @@ const upperCats = cats.map(toUpper);
 console.log(upperCats);
 // [ "LEOPARD", "SERVAL", "JAGUAR", "TIGER", "CARACAL", "LION" ]
 
-While Loop
+##While Loop
 
 it's loop's syntax looks like so:
 
@@ -199,7 +199,7 @@ while (condition) {
   final-expression
 }
 
-Do While Loop
+##Do While Loop
 
 The do...while loop is very similar, but provides a variation on the while structure:
 
@@ -229,14 +229,14 @@ We can traverse through it by using forEach function.
 
 When a function is used as an event handler, its this is set to the element on which the listener is placed (some browsers do not follow this convention for listeners added dynamically with methods other than addEventListener()).
 
-Bubbling
+##Bubbling
 Event bubbling is a method of event propagation in the HTML DOM API when an event is in an element inside another element, and both elements have registered a handle to that event. It is a process that starts with the element that triggered the event and then bubbles up to the containing elements in the hierarchy. In event bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
 To Stop Bubbling we can use <event>.stopPropagation();
 
 To make the eventlistener listen only once, we can use addEventListener('event','function or anything',{once:true})
 the once parameter makes sure that it only done once.
 
-Objects
+##Objects
 An object can be created with figure brackets {…} with an optional list of properties. A property is a “key: value” pair, where key is a string (also called a “property name”), and value can be anything.
 We can imagine an object as a cabinet with signed files. Every piece of data is stored in its file by the key. It’s easy to find a file by its name or add/remove a file.
 It is like Dictionary in Python.
@@ -272,7 +272,7 @@ The phone codes go in the ascending sorted order, because they are integers. So 
 
 On the other hand, if the keys are non-integer, then they are listed in the creation order
 
-Constructor
+##Constructor
 A constructor is just a function called using the new keyword. When you call a constructor, it will:
 
 i)create a new object
@@ -288,7 +288,6 @@ function Person(name) {
     console.log(`Hi! I'm ${this.name}.`);
   }
 }
-Copy to Clipboard
 To call Person() as a constructor, we use new:
 
 const salva = new Person('Salva');
@@ -300,7 +299,7 @@ frankie.name;
 frankie.introduceSelf();
 Copy to Clipboard
 
-Object Methods
+##Methods To use
 1. obj.sort()
 syntax obj.sort(function () {
   conditon{
